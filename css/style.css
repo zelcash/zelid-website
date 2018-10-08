@@ -246,7 +246,7 @@ label.panel-label:hover {
     display: block;
     max-height: 0;
     overflow-y: hidden;
-    background-color: #444444;
+    background-color: #fff;
     color: #44318D;
     padding: 0px;
     transition: max-height 200ms;
