@@ -15,17 +15,23 @@
         <link rel="stylesheet" href="css/responsive.css">
     </head>
     <body data-spy="scroll" data-target="#mainNav" data-offset="70">
-        
+
         <!--================Home Banner Area =================-->
         <section class="home_banner_area" id="home">
             <div class="banner_inner">
-				<div class="container">
+				<div class="container" id="wrapper">
 					<div class="row banner_content">
-						<div class="col-lg-9">
+						<div class="col-lg-9 col-sm-12">
 							<h2>Zel ID</h2>
 							<p>A decentralized authentication protocol that is truly seamless, secure, and private. A digital identity you control for cross-platform authentication.</p>
+							<h4>Try it now</h4>
+							<a class="btn btn-light" v-on:click="computePhrase" :href="'zel:?action=sign&message=Zel%20ID%20Login%20' + loginPhrase + '&icon=http%3A%2F%2Fzelid.io%2Fimg%2FzelID.svg&callback=http%3A%2F%2Fdev.authparty.io%2Fapi%2Fv1%2Fauthorize_login%3Fmodal_id%3DWpKmMMyWqRZonzA'" style="margin-top: 15px;">
+								Login
+								<img src="img/zelID.svg" style="height: 40px; margin: 0px 0px 0px 5px;" />
+							</a>
+							<p style="margin-top: 10px;">Logins currently limited to showcasing Zel Core functionality. Zel ID.io will soon feature fully integrated login capability.</p>
 						</div>
-						<div class="col-lg-3">
+						<div class="col-lg-3 col-sm-12">
 							<div class="banner_map_img">
 								<img class="img-fluid" src="img/zelID.svg" alt="">
 							</div>
@@ -35,7 +41,7 @@
             </div>
         </section>
         <!--================End Home Banner Area =================-->
-        
+
         <!--================Feature Area =================-->
         <section class="feature_area p_120" id="feature">
         	<!-- TAB CONTROLLERS -->
@@ -86,7 +92,7 @@
 						<main>
 							<h1>How it works</h1>
 							<p><b>1.</b>	Zel ID works with Hierarchical Deterministic Wallets (HD Wallets) and utilizes the blockchain as a decentralized and distributed database. This allows a user to create an account, not by generating and storing a public (address) and private key but instead by utilising a username and password to peform the same action.</p>
-							<p><b>2.</b>	This enables a user to login on multiple devices with a convenient set of credentials, allowing authentication on multiple platforms through digital signatures.</p> 
+							<p><b>2.</b>	This enables a user to login on multiple devices with a convenient set of credentials, allowing authentication on multiple platforms through digital signatures.</p>
 							<p><b>3.</b>	d2FA keeps your account secure by also allowing a user-selectable PIN as a second layer of security.</p>
 							<p><b>4.</b>	Zel ID, simple and secure authentication, is only strengthened with d2FA by creating an additional layer of security that is immune to exploits that current centralized 2FA systems encounter.</p>
 						</main>
@@ -106,7 +112,7 @@
 			</article>
         </section>
         <!--================End Feature Area =================-->
-        
+
         <!--================Interior Area =================-->
         <section class="interior_area">
         	<div class="container">
@@ -124,7 +130,7 @@
         	</div>
         </section>
         <!--================End Interior Area =================-->
-        
+
         <!--================Interior Area =================-->
         <section class="interior_area interior_two">
         	<div class="container">
@@ -143,8 +149,8 @@
         	</div>
         </section>
         <!--================End Interior Area =================-->
-        
-		
+
+
 		<!--================Interior Area =================-->
         <section class="interior_area">
         	<div class="container">
@@ -162,7 +168,7 @@
         	</div>
         </section>
 		<!--================End Interior Area =================-->
-		
+
         <!--================Download App Area =================-->
         <section class="download_app_area p_120">
         	<div class="container">
@@ -183,7 +189,7 @@
 								</div>
 							</div>
 						</a>
-						
+
 						<a href="https://play.google.com/store/apps/details?id=com.zelcash.zelcore" target="_blank">
 							<div class="app_btn mb-3">
 								<div class="media">
@@ -244,8 +250,8 @@
         	</div>
         </section>
         <!--================ End Download App Area =================-->
-        
-		<!--================ Start footer Area  =================-->	
+
+		<!--================ Start footer Area  =================-->
 		<footer id="footer">
 			<p class="copyright">&copy; Copyright 2018 Zel Technologies GmbH. All rights reserved.</p>
 		</footer>
@@ -256,5 +262,23 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.ajaxchimp.min.js"></script>
+				<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+				<script type="text/javascript">
+					new Vue({
+						el: '#wrapper',
+						data: {
+							loginPhrase: 'asd'
+						},
+						methods: {
+							computePhrase: function () {
+								this.loginPhrase = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+							}
+						},
+						mounted: function () {
+							this.computePhrase();
+						}
+					})
+				</script>
     </body>
 </html>
