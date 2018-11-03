@@ -9,19 +9,46 @@
         <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/themify-icons.css"/>
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/responsive.css">
-		<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+		<link rel="stylesheet" href="https://zel.cash/css/unified.css"/>
+
+		<!-- <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
 			new Crate({
 			  server: '404415190835134464',
 			  channel: '499233727356993566',
 			})
-		  </script>
+		</script> -->
 	</head>
 	
     <body data-spy="scroll" data-target="#mainNav" data-offset="70">
+
+		<div id="myNav" class="overlay" onclick="closeNav()">
+
+			<!-- Button to close the overlay navigation -->
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			
+			<!-- Overlay content -->
+			<div class="overlay-content">
+				<a href="#"><img src="https://zel.cash/img/logo-zeltech-text.svg"></a>
+				<a href="https://zel.cash"><img src="https://zel.cash/img/logo-zelcash-text-light.svg"></a>
+				<a href="https://zelcore.io"><img src="https://zel.cash/img/logo-zelcore-text-light.svg"></a>
+				<a href="https://zelid.io"><img src="https://zel.cash/img/logo-zelid-text.svg"></a>
+			</div>
+			
+		</div>
+			
+		<div class="unified" onclick="openNav()">
+			<a href="#" onclick="openNav()">Zel Ecosystem</a>
+		</div>
+		
+		<div class="triangle-down">
+			<p>
+				<i class="fas fa-caret-down fa-2x"></i>
+			</p>
+		</div>
 
         <!--================Home Banner Area =================-->
         <section class="home_banner_area" id="home">
@@ -187,7 +214,7 @@
 							<div class="app_btn mb-3">
 								<div class="media">
 									<div class="d-flex">
-										<i class="fa fa-apple" aria-hidden="true"></i>
+										<i class="fab fa-apple" aria-hidden="true"></i>
 									</div>
 									<div class="media-body">
 										<h4>Available</h4>
@@ -201,7 +228,7 @@
 							<div class="app_btn mb-3">
 								<div class="media">
 									<div class="d-flex">
-										<i class="fa fa-android" aria-hidden="true"></i>
+										<i class="fab fa-android" aria-hidden="true"></i>
 									</div>
 									<div class="media-body">
 										<h4>Available</h4>
@@ -215,7 +242,7 @@
 							<div class="app_btn mb-3">
 								<div class="media">
 									<div class="d-flex">
-										<i class="fa fa-windows" aria-hidden="true"></i>
+										<i class="fab fa-windows" aria-hidden="true"></i>
 									</div>
 									<div class="media-body">
 										<h4>Download</h4>
@@ -229,7 +256,7 @@
 							<div class="app_btn mb-3">
 								<div class="media">
 									<div class="d-flex">
-										<i class="fa fa-apple" aria-hidden="true"></i>
+										<i class="fab fa-apple" aria-hidden="true"></i>
 									</div>
 									<div class="media-body">
 										<h4>Download</h4>
@@ -243,7 +270,7 @@
 							<div class="app_btn mb-3">
 								<div class="media">
 									<div class="d-flex">
-										<i class="fa fa-linux" aria-hidden="true"></i>
+										<i class="fab fa-linux" aria-hidden="true"></i>
 									</div>
 									<div class="media-body">
 										<h4>Download</h4>
@@ -269,23 +296,25 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.ajaxchimp.min.js"></script>
-				<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+		<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+		<script src="https://zel.cash/js/unified.js"></script>
 
-				<script type="text/javascript">
-					new Vue({
-						el: '#wrapper',
-						data: {
-							loginPhrase: 'asd'
-						},
-						methods: {
-							computePhrase: function () {
-								this.loginPhrase = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-							}
-						},
-						mounted: function () {
-							this.computePhrase();
-						}
-					})
-				</script>
+
+		<script type="text/javascript">
+			new Vue({
+				el: '#wrapper',
+				data: {
+					loginPhrase: 'asd'
+				},
+				methods: {
+					computePhrase: function () {
+						this.loginPhrase = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+					}
+				},
+				mounted: function () {
+					this.computePhrase();
+				}
+			})
+		</script>
     </body>
 </html>
